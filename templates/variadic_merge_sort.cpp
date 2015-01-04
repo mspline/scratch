@@ -1,4 +1,3 @@
-#include <cstdio>
 #include <type_traits>
 #include <vector>
 
@@ -134,26 +133,22 @@ template <int... Xs> struct mergesort<_<Xs...>> :
 int main()
 {
     static_assert(is_same<
-        mergesort<
-            _<>>::type,
-            _<>
+        mergesort<_<>>::type,
+        _<>
     >::value, "");
 
     static_assert(is_same<
-        mergesort<
-            _<42>>::type,
-            _<42>
+        mergesort<_<42>>::type,
+        _<42>
     >::value, "");
 
     static_assert(is_same<
-        mergesort<
-            _<12, 11, 15, 13>>::type,
-            _<11, 12, 13, 15>
+        mergesort<_<12, 11, 15, 13>>::type,
+        _<11, 12, 13, 15>
     >::value, "");
 
     static_assert(is_same<
-        mergesort<
-            _<49, 11, -8, 345, 4, -18, 29, 11, 42>>::type,
-            _<-18, -8, 4, 11, 11, 29, 42, 49, 345>
+        mergesort<_<49, 11, -8, 345, 4, -18, 29, 11, 42>>::type,
+        _<-18, -8, 4, 11, 11, 29, 42, 49, 345>
     >::value, "");
 }
