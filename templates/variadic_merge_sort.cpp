@@ -38,9 +38,7 @@ template <typename TF, typename TT> struct cond<false, TT, TF>
 
 // skip
 
-template <size_t, typename> struct skip
-{
-};
+template <size_t, typename> struct skip;
 
 template <int... Xs> struct skip<0, _<Xs...>>
 {
